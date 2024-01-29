@@ -7,6 +7,6 @@
 <body>
 <h1><%= "Hello World!" %></h1>
 <br/>
-<a href="./register.xqa">Go to Signup Page</a>
+<a href="./WEB-INF/register.jsp">Go to Signup Page</a>
 </body>
 </html>
