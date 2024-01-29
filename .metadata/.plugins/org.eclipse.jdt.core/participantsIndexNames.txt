@@ -1,0 +1,5 @@
+INDEX VERSION 1.134
+D:\Studies\Workspace\Y2\Java\Class Work\Term 2\student_registration\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\596091540.index
+\student_registration\src\main\java
+D:\Studies\Workspace\Y2\Java\Class Work\Term 2\student_registration\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3724750933.index
+\student_registration\src\main\java

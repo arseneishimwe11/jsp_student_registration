@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+D:\Studies\Workspace\Y2\Java\Class Work\Term 2\student_registration\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1034492614.index
+3699761838.index
+596091540.index
+3724750933.index
+1044888238.index
+2782432030.index
+3628430180.index
+1925588498.index
