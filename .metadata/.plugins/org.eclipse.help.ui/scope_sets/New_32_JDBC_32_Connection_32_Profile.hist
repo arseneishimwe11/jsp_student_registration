@@ -1,0 +1,6 @@
+#Mon Jan 29 15:54:39 CAT 2024
+__DEFAULT__=false
+expression=New JDBC Connection Profile
+org.eclipse.help.ui.localSearch.master=true
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true

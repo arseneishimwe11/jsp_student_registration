@@ -85,7 +85,7 @@
                                             type="checkbox"
                                             name="agree-term"
                                             id="agree-term"
-                                            class="agree-term" required/>
+                                            class="agree-term"/>
                                     <label for="agree-term" class="label-agree-term">
                                         <span><span></span></span>Remember me
                                     </label>

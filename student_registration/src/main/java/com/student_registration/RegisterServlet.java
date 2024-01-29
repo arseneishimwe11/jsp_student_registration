@@ -33,9 +33,7 @@ public class RegisterServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		 System.out.println("The codes here should work");
 	     request.getRequestDispatcher("WEB-INF/register.jsp").forward(request, response);
-	     System.out.println("The codes reached point 2");
 	}
 
 	/**
@@ -44,8 +42,7 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		System.out.println("The codes reached point 3");
-		String url = "jdbc:postgresql://localhost:5432/student_registration_db";
+		String url = "jdbc:postgresql://localhost:5432/student_registration_db"; 
         String user = "postgres";
         String password = "ugarise1";
 
