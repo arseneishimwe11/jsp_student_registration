@@ -49,7 +49,6 @@ public class DisplayData extends HttpServlet {
 	                        "Dob: " + resultSet.getDate("dob") + ", Grade: " + resultSet.getInt("grade") + ", Email: " + resultSet.getString("email"));
 	                
 	                // Set attributes to pass data to the JSP page
-	                request.setAttribute("id", resultSet.getInt("id"));
 	                request.setAttribute("student_code", resultSet.getInt("student_code"));
 	                request.setAttribute("name", resultSet.getString("name"));
 	                request.setAttribute("dob", resultSet.getDate("dob"));

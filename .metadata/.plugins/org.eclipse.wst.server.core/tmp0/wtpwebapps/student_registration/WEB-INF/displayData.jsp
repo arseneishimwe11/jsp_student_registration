@@ -29,6 +29,7 @@
             <th class="text-black">Grade</th>
         </tr>
         <tr>
+        	<td><%= request.getAttribute("id") %></td>
             <td><%= request.getAttribute("student_code") %></td>
             <td><%= request.getAttribute("name") %></td>
             <td><%= request.getAttribute("date") %></td>
