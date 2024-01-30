@@ -4,10 +4,13 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+import java.util.Date;
 
-import jakarta.servlet.RequestDispatcher;
+
+//import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -32,7 +35,6 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	     request.getRequestDispatcher("WEB-INF/register.jsp").forward(request, response);
 	}
 
@@ -46,56 +48,44 @@ public class RegisterServlet extends HttpServlet {
         String user = "postgres";
         String password = "ugarise1";
 
-        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+
+		try {
+		    Class.forName("org.postgresql.Driver");
+		    Connection connection = DriverManager.getConnection(url, user, password);
             System.out.println("Connected to the PostgreSQL server successfully.");
 
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = dateFormat.parse(request.getParameter("date"));
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
             int code = Integer.parseInt(request.getParameter("code"));
-            int age = Integer.parseInt(request.getParameter("age"));
+            int grade = Integer.parseInt(request.getParameter("grade"));
             String names = request.getParameter("name");
             String email = request.getParameter("email");
             String user_password = request.getParameter("pass");
 
             // Insert a record
-            String insertQuery = "INSERT INTO students_info (student_code, name, age, email, password) VALUES (?, ?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO students_info (student_code, name, dob, email, grade, password) VALUES (?, ?, ?, ?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
                 preparedStatement.setInt(1, code);
                 preparedStatement.setString(2, names);
-                preparedStatement.setInt(3, age);
+                preparedStatement.setDate(3, sqlDate);
                 preparedStatement.setString(4, email);
-                preparedStatement.setString(5, user_password);
+                preparedStatement.setInt(5, grade);
+                preparedStatement.setString(6, user_password);
 
                 int rowsAffected = preparedStatement.executeUpdate();
 
                 if (rowsAffected > 0) {
                     System.out.println("Record inserted successfully");
 
-                    // Set attributes to pass data to the next page
-                    request.setAttribute("code", code);
-                    request.setAttribute("names", names);
-                    request.setAttribute("age", age);
-                    request.setAttribute("email", email);
-
-                    // Forward to the next page
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("displayData.jsp");
-                    dispatcher.forward(request, response);
-
+                    response.sendRedirect(request.getContextPath() + "/student_info");
+                    	
                 } else {
                     System.out.println("Insert operation failed");
                 }
             }
 
-            // Retrieving records
-            String selectQuery = "SELECT * FROM students_info";
-            try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
-                ResultSet resultSet = preparedStatement.executeQuery();
-                while (resultSet.next()) {
-                    System.out.println("Code: " + resultSet.getInt("student_code") + ", Name: " + resultSet.getString("name") + ", " +
-                            "Age: " + resultSet.getInt("age") + ", Email: " + resultSet.getString("email"));
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException | ParseException e) {
             e.printStackTrace();
         }
 	}

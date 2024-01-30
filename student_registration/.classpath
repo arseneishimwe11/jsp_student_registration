@@ -13,6 +13,32 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="D:/Studies/Workspace/Y2/Java/Class Work/Term 2/student_registration/student_registration/src/main/webapp/WEB-INF/lib/postgresql-42.7.1.jar"/>
+	<classpathentry kind="lib" path="D:/Studies/Workspace/Y2/Java/Class Work/Term 2/student_registration/student_registration/src/main/webapp/WEB-INF/lib/postgresql-42.7.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Studies/Workspace/Y2/Java/Class Work/Term 2/student_registration/student_registration/src/main/webapp/WEB-INF/lib/jsp-api-2.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Studies/Workspace/Y2/Java/Class Work/Term 2/student_registration/student_registration/src/main/webapp/WEB-INF/lib/jstl-1.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Studies/Workspace/Y2/Java/Class Work/Term 2/student_registration/student_registration/src/main/webapp/WEB-INF/lib/postgresql-8.1-404.jdbc3.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Studies/Workspace/Y2/Java/Class Work/Term 2/student_registration/student_registration/src/main/webapp/WEB-INF/lib/servlet-api-2.5.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/postgresql-42.7.1.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/postgresql-8.1-404.jdbc3.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -53,14 +53,24 @@
                                             placeholder="Your Email" required/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="age">
+                                    <label for="date">
+                                        <i class="zmdi zmdi-lock-outline"></i>
+                                    </label>
+                                    <input
+                                            type="date"
+                                            name="date"
+                                            id="date"
+                                            placeholder="Dob" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="grade">
                                         <i class="zmdi zmdi-lock-outline"></i>
                                     </label>
                                     <input
                                             type="number"
-                                            name="age"
-                                            id="age"
-                                            placeholder="Age" required/>
+                                            name="grade"
+                                            id="grade"
+                                            placeholder="Grade" required/>
                                 </div>
                                 <div class="form-group">
                                     <label for="pass"><i class="zmdi zmdi-lock"></i></label>
